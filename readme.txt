@@ -1,3 +1,3 @@
 git is a free
-git is very goo
+is very goo
 hiiiii
