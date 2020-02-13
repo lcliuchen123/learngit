@@ -10,9 +10,25 @@
 1. git diff: 查看修改的文件内容
 2. **git reflog: 记录每次执行的git命令**
 3. git log: 查看提交历史
-4. **git  checkout --file_name: 撤销工作区的修改，如果没有--，表示切换分支**
-5. **git reset HEAD file_name: 把暂存区的修改撤销，版本回退的前提是没有提交到远程仓库**
 
+4. 撤销修改
+   * 如果在本地(工作区)：
+     **git  checkout --file_name: 
+       撤销工作区的修改，即恢复被删除的文件
+       如果没有--，表示切换分支**
+   * 如果已经commit(暂存区)：
+       1. git reset HEAD file_name: 把暂存区的修改撤销，版本回退的前提是没有提交到远程仓库，
+       2. 然后再git checkout --file_name
+
+5. 删除文件
+   * rm file_name 删除本地文件
+   * git rm file_name 删除版本库中的文件，并且git commit
+   * 删除远程仓库中的文件
+     1. rm file_name
+     2. git commit -m "remove file_name"
+     3. git push origin master
+   * 删除远程仓库？？？？？？
+   
 6. 本地初始化git仓库，添加到远程仓库：
     git remote add origin git@github.com:michaelliao/learngit.git
     * git remote rm origin 删除本地仓库与远程的连接
@@ -70,3 +86,6 @@
 12. 配置git
     * 给命令设置别名 git config --global alias.ci commit
     * global表示为所有的仓库执行相同的命令
+
+13.删除文件
+    
