@@ -5,7 +5,8 @@
 <br>如何在本地创建一个git库并与远程仓库联系起来？
 <br>如何同时绑定多个远程仓库？
 <br>查看日志，版本回退
-<br>分支管理
+<br>分支管理等
+
 ### git常用命令，参见git-changset.pdf
 1. git diff: 查看修改的文件内容
 2. **git reflog: 记录每次执行的git命令**
@@ -48,6 +49,8 @@
 
 8. 实际工作中一般不会在master分支工作，设置分支，在分支上进行工作，然后合并
     * 修复bug时通常重新建立分支，再分支上修复后再合并，然后删除bug分支
+    * git pull 拉取远程仓库的代码，强制覆盖本地的代码，
+      防止本地修改丢失，应该使用git stash保存本地的修改
     * git stash 缓存未完成的工作
     * git stash list 查看缓存的内容
     * git stash pop 恢复未完成的内容，并删除stash
@@ -73,19 +76,17 @@
     * 删除标签 git tag -d name
       <br>上传到远程仓库 git push origin name
       <br>全部上传 git push origin --tags
-      如果上传到远程，需要先删除本地，再删除远程的，删除
+      <br>如果上传到远程，需要先删除本地，再删除远程的，删除
       远程的代码 git push origin :refs/tags/tagname
 
 11. 本地仓库可以同时关联多个远程分支
-    1. git init 初始化本地目录为git仓库
-    2. git remote add github git@github.com/chen_liu_123/learngit.git 
-    3. git remote add origin  http://gitee.com/chen_liu_123/learngit.git 
-    4. git push github master
-    5. git push origin master
+    * git init 初始化本地目录为git仓库
+    * git remote add github git@github.com/chen_liu_123/learngit.git 
+    * git remote add origin  http://gitee.com/chen_liu_123/learngit.git 
+    * git push github master
+    * git push origin master
 
 12. 配置git
     * 给命令设置别名 git config --global alias.ci commit
     * global表示为所有的仓库执行相同的命令
-
-13.删除文件
     
