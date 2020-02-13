@@ -61,7 +61,7 @@
 
 9. 本地新建的分支如果不推送到远程，对其他人就是不可见的；
     * 从本地推送分支，使用git push origin branch-name，
-    * 如果推送失败，先用git pull抓取远程的新提交；
+    * 如果推送失败，先用git pull origin master抓取远程的新提交；
     * 在本地创建和远程分支对应的分支 git checkout -b branch-name origin/branch-name，
       本地和远程分支的名称最好一致；
     * git pull 失败后提示，可以建立本地分支和远程分支的关联 git branch --set-upstream branch-name origin/branch-name
